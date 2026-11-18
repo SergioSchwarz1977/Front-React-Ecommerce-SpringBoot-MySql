@@ -1,0 +1,475 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu ul {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+.menu a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  &:hover {
+    color: #7bb2f0;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
+  
+}
+.disabledlink {
+  color: gray;
+  cursor: not-allowed;
+  opacity: 0.6;
+  font-size: 1.2rem;
+}
+.logo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover; 
+  border-radius: 50%; 
+  pointer-events: none; 
+}
+.title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0b80ee;
+
+  &:hover {
+    color: #0868c4;
+    transition: ease-in-out 0.3s;
+    transform: scale(1.1);
+  }
+}
+
+.login {
+  margin-left: 1.3rem;
+  display: flex;
+  gap: 1rem;
+  font-size: 1rem;
+  background-color: #0b80ee;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #0868c4;
+    transition: 0.3s ease-in-out;
+    transform: scale(1.05);
+  }
+}
+.footer {
+    background-color: #1f2937;
+    color: white;
+    margin-top: 3rem;
+}
+
+.footercontainer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 2rem;
+}
+
+.footersection {
+    min-width: 220px;
+}
+
+.footersection h2,
+.footersection h3 {
+    margin-bottom: 1rem;
+    color: #3b82f6;
+}
+
+.footersection p {
+    line-height: 1.6;
+    color: #d1d5db;
+}
+
+.footersection ul {
+    list-style: none;
+}
+
+.footersection ul li {
+    margin-bottom: 0.7rem;
+}
+
+.footersection ul li a {
+    text-decoration: none;
+    color: #d1d5db;
+    transition: color 0.3s;
+}
+
+.footersection ul li a:hover {
+    color: #3b82f6;
+}
+
+.socialicons {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.socialicons a {
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+
+.socialicons a:hover {
+    transform: scale(1.2);
+}
+
+.footerbottom {
+    text-align: center;
+    padding: 1rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+.tablecontainer {
+    width: 95%;
+    margin: 2rem auto;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.tablecontainer h2 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.productstable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.productstable thead {
+    background-color: #0b80ee;
+    color: white;
+}
+
+.productstable th,
+.productstable td {
+    padding: 12px 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+}
+
+.productstable tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+.acciones {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btneditar {
+    background-color: #ffc107;
+    color: black;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btneditar:hover {
+    background-color: #e0a800;
+}
+
+.btneliminar {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btneliminar:hover {
+    background-color: #c82333;
+}
+
+.contactopage {
+  font-family: system-ui, -apple-system, sans-serif;
+  color: #1e293b;
+  background-color: #f8fafc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.contactoheader {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contactobrand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logovideo {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.brandname {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.contactonav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.contactonav a {
+  text-decoration: none;
+  color: #475569;
+  font-weight: 500;
+}
+
+.contactonav a:hover,
+.contactonav a.activo {
+  color: #2563eb;
+}
+
+/* Título */
+.contactotitulo {
+  text-align: center;
+  padding: 3rem 1rem 2rem;
+}
+
+.contactotitulo h1 {
+  margin: 0 0 0.5rem;
+  font-size: 2rem;
+  color: #0f172a;
+}
+
+.contactotitulo p {
+  margin: 0;
+  color: #64748b;
+}
+
+/* Contenedor de 2 columnas */
+.contactogrid {
+  max-width: 950px;
+  width: 100%;
+  margin: 0 auto 3rem;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2rem;
+  box-sizing: border-box;
+}
+
+.contactocard {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+}
+
+.contactocard h2 {
+  margin-top: 0;
+  font-size: 1.35rem;
+  color: #0f172a;
+}
+
+.contactocard h3 {
+  margin-top: 1.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.textosecundario {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Lista de datos */
+.datoslista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+/* Botones de Redes Sociales */
+.redessociales {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.redbtn {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 0.65rem;
+  border-radius: 8px;
+  transition: opacity 0.2s;
+}
+
+.redbtn:hover {
+  opacity: 0.9;
+}
+
+.whatsapp { background-color: #16a34a; }
+.instagram { background-color: #e1306c; }
+.facebook { background-color: #1877f2; }
+.tiktok { background-color: #0f172a; }
+
+/* Formulario */
+.contactoform {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.campo label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #334155;
+}
+
+.campo input,
+.campo textarea {
+  padding: 0.7rem 0.85rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+.campo input:focus,
+.campo textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+}
+
+.btnenviar {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: none;
+  padding: 0.85rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.btnenviar:hover {
+  background-color: #1d4ed8;
+}
+
+
+@media (max-width: 768px) {
+  .contactogrid {
+    grid-template-columns: 1fr;
+  }
+
+  .contactotitulo {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+.logincontainer {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f6f9;
+}
+
+.loginform {
+  background-color: white;
+  width: 350px;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.loginform h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #0b80ee;
+}
+
+.inputgroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.inputgroup label {
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.inputgroup input {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.inputgroup input:focus {
+  outline: none;
+  border-color: #0b80ee;
+}
+
+.btnlogin {
+  width: 100%;
+  padding: 0.8rem;
+  background-color: #0b80ee;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btnlogin:hover {
+  background-color: #0868c4;
+}
