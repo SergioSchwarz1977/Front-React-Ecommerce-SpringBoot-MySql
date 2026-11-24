@@ -43,9 +43,39 @@ npm run lint     # Ejecuta ESLint
   está iniciada. Al cerrar sesión, vuelve a **Inicio**.
 - El estado de sesión se comparte entre las pantallas y se conserva al recargar
   mediante la clave `logueado` de `localStorage`.
-- La pantalla de productos obtiene los datos desde
-  `/api/productos/listarConCategoria` (reenviado por Vite a
-  `/productos/listarConCategoria` en el backend).
+
+## Gestión de productos y API
+
+La pantalla **Productos** permite listar, buscar, agregar, editar y eliminar
+productos. En desarrollo, el frontend usa el prefijo `/api/productos`, que Vite
+reenvía al backend como `/productos`. En producción, las solicitudes se realizan
+directamente bajo `/productos` en el mismo origen.
+
+| Operación | Método | Ruta del backend | Uso |
+| --- | --- | --- | --- |
+| Listar productos con categoría | `GET` | `/productos/listarConCategoria` | Carga el listado de la pantalla. |
+| Buscar producto por ID | `GET` | `/productos/{id}` | Lo usa el campo **Buscar producto por ID** y la edición. |
+| Agregar producto | `POST` | `/productos/crear` | Guarda el producto ingresado en el formulario. |
+| Actualizar producto | `PUT` | `/productos/actualizar/{id}` | Guarda los cambios de un producto. |
+| Eliminar producto | `DELETE` | `/productos/eliminar/{id}` | Elimina el producto indicado. |
+
+Durante el desarrollo, por ejemplo, la búsqueda del producto `5` se solicita a
+`GET /api/productos/5` y Vite la reenvía al backend como
+`GET /productos/5`. En producción, la ruta es `GET /productos/5`.
+
+El alta y la edición envían JSON. La categoría se relaciona mediante su ID:
+
+```json
+{
+  "nombre": "Producto",
+  "descripcion": "Descripción del producto",
+  "precio": 100.0,
+  "stock": 10,
+  "categoria": {
+    "id": 1
+  }
+}
+```
 
 > La marca guardada en `localStorage` mantiene el estado de la interfaz, pero no
 > reemplaza la autenticación del backend. El backend debe validar los permisos
