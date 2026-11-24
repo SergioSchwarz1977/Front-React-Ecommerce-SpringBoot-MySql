@@ -20,7 +20,7 @@ export const Login = () => {
     };
 
     try {
-      const respuesta = await fetch("http://localhost:8080/api/login", {
+      const respuesta = await fetch("/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -34,8 +34,12 @@ export const Login = () => {
         setUsuario("");
         setPassword("");
         navigate("/productos");
-      } else {
+      } else if (respuesta.status === 401 || respuesta.status === 403) {
         alert(" ❌ Usuario o contraseña incorrectos");
+      } else if (respuesta.status === 404) {
+        alert(" ❌ No se encontró el endpoint de login en el servidor");
+      } else {
+        alert(` ❌ Error del servidor (HTTP ${respuesta.status})`);
       }
     } catch (error) {
       console.error(error);
