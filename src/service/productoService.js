@@ -30,7 +30,12 @@ export const crearProducto = async (producto) => {
     if (!response.ok) {
         throw new Error(`Error al crear el producto (HTTP ${response.status})`);
     }
-    return await response.json();
+    if (response.status === 204) {
+        return null;
+    }
+
+    const responseBody = await response.text();
+    return responseBody ? JSON.parse(responseBody) : null;
 };
 
 export const actualizarProducto = async (id, producto) => {
